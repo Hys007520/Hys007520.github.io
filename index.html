@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>personal web sites</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="top">
+			<div class="header">
+				<div class="logo">
+					<h3>personal web sites </h3>
+				</div>
+				<div class="nav">
+					<a href="index.html">home page</a>
+					<a href="work.html">works</a>
+					<a href="kill.html">skill</a>
+					<a href="life.html">about me</a>
+					<a href="contant.html">contact me</a>
+				</div>
+			</div>
+		</div>
+		<div class="ftitle">
+			<h3>#contact me</h3>
+		</div>
+		<form class="lyy">
+			<div class="lyy-t">
+				<ul>
+					<li>
+						<span>name：</span>
+						<input type="text" id="name" placeholder="Please enter your name"/>
+					</li>
+					<li>
+						<span>cell-phone number：</span>
+						<input type="text" id="phone" placeholder="Please enter your mobile number" />
+					</li>
+					<li>
+						<span>wechat：</span>
+						<input type="text" id="wechat" placeholder="Please enter your wechat" />
+					</li>
+				</ul>
+			</div>
+			<div class="lyy-b">
+				<textarea id="content" placeholder="Please enter the content of your message"></textarea>
+			</div>
+			<div class="lyy-btn">
+				<input type="button" value="Submit a message" onclick="goPost()">
+			</div>
+		</form>
+		<div class="line"></div>
+		<div class="footer">
+			<p>personal web sites  &nbsp;&nbsp;&nbsp;&nbsp; ：design and production：黄禹舜</p>
+		</div>
+		<script>
+			function goPost(){
+				// Gets the value of the name
+				var name = document.getElementById('name').value
+				// Gets the value of the phone number
+				var phone = document.getElementById('phone').value
+				// Get the value of wechat
+				var wechat = document.getElementById('wechat').value
+				// Gets the value of the content
+				var content = document.getElementById('content').value
+				var regPhone = /^1[3456789]{1}\d{9}$/; //Phone regularity
+				// The name cannot be blank
+				if(!name) {
+					alert('The name cannot be blank')
+					return false
+				}
+				// The phone cannot be empty
+				if(!phone) {
+					alert('The phone cannot be empty')
+					return false
+				}
+				// The phone number is incorrect
+				if(!regPhone.test(phone)){
+					alert('The phone number is incorrect')
+					return false
+				}
+				// Wechat cannot be empty
+				if(!wechat) {
+					alert('Wechat cannot be empty')
+					return false
+				}
+				// The content cannot be empty
+				if(!content) {
+					alert('The content cannot be empty')
+					return false
+				}
+				// submit successfully
+				alert('submit successfully')
+				// After the submission is successful, go to the home page
+				window.location.href = 'index.html'
+			}
+		</script>
+	</body>
+</html>
